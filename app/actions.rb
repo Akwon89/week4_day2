@@ -12,7 +12,14 @@ USERS = [{
   password: 123
 }]
 
+#order doesnt matter, keep in action file
+helpers do
+  #check database to see if user exists, if exists return user other wise nil.
+  def current_user
+    USERS.find { |u| u[:id] == session[:user_id] }
+  end
 
+end
 
 # Homepage (Root path)
 get '/' do
