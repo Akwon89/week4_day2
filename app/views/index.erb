@@ -1,0 +1,21 @@
+<h1>Home Page</h1>
+
+<% if session[:user_id] %>
+  <a href="/logout">Log Out</a>
+<% else %>
+  <form method="post" action="/login">
+  <ul style="list-style-type: none;">
+    <li>
+      <label>Username: </label>
+      <input type="text" name="username" />
+    </li>
+    <li>
+      <label>Password: </label>
+      <input type="password" name="password" />
+    </li>
+    <li>
+      <input type="submit" />
+    </li>
+  </ul>
+</form>
+<% end %>
